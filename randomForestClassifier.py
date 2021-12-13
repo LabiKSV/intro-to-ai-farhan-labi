@@ -11,7 +11,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn import metrics
 from sklearn.model_selection import train_test_split 
-#import seaborn as sns
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 pd.set_option('display.max_rows', 50)
