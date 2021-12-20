@@ -121,6 +121,8 @@ kf = KFold (5)
 fold = 1 
 
 n = 0
+
+"""
 for train_index, test_index in kf.split(X,y):
     print(str(n+1) + " This is loop number: " + str(train_index))
     lr_model.fit(X[train_index], y[train_index])
@@ -128,7 +130,14 @@ for train_index, test_index in kf.split(X,y):
     y_test1 = y[test_index]
     y_pred1 = lr_model.predict(X[test_index])
     print("Fold", {fold})
-    print("RMSE:", np.sqrt(metrics.mean_squared_error(y_test1, y_pred1)))
+    print("RMSE:", np.sqrt(metrics.mean_squared_error(y_test1, y_pred1)))"""
+
+
+for train_index, test_index in kf.split(X, y):
+    print("TRAIN: ", train_index, "TEST: ", test_index)
+    X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+    y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+    
 
 
 
